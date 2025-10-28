@@ -3,8 +3,6 @@ from langchain.agents import tool
 from langchain.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 
-from callbackhandler import AgentCallbackHandler
-
 load_dotenv()
 
 
@@ -29,7 +27,6 @@ def create_tool_bound_agent():
     llm = ChatOpenAI(
         temperature=0,
         model="gpt-4",
-        callbacks=[AgentCallbackHandler()],
     )
 
     # Bind tools to LLM - this enables automatic tool calling
@@ -41,7 +38,7 @@ def create_tool_bound_agent():
             (
                 "system",
                 """You are a helpful assistant with access to tools.
-        
+       
 When you need to calculate text length, use the check_length tool.
 Always think step by step and explain your reasoning.
 Provide clear, helpful answers to user questions.""",

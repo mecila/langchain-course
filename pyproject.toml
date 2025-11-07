@@ -1,0 +1,13 @@
+[project]
+name = "intro-to-vector-dbsv2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "langchain==0.1.16",
+    "langchain-openai>=0.1.7",
+    "langchain-pinecone>=0.1.3",
+    "langchainhub>=0.1.21",
+]
